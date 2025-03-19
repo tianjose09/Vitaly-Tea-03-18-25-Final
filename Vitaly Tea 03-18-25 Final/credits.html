@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Preferred favicon format -->
+<link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" href="images/icons/favicon.png">
+
+<!-- Windows Tiles -->
+<meta name="msapplication-TileImage" content="images/icons/favicon.png">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        #header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: darkred;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        #logo {
+            font-size: 3em;
+            color: darkred;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            flex: 1;
+        }
+
+        .credits-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: darkred; 
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 40px;
+  text-align: left;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+.credits-list {
+  list-style: none;
+  padding: 0;
+  text-align: left; 
+  border-radius: 8px; 
+  background-color: #ffffff; 
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+}
+
+.credits-list li {
+  margin: 15px 0;
+}
+
+.credits-list a {
+  text-decoration: none;
+  color: darkred; 
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.credits-list a:hover {
+  color: #555555; 
+  text-decoration: underline;
+}
+
+.appreciation {
+  font-size: 1.5rem;
+  color: darkred;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+
+/* Navbar styles */
+
+#navbar {
+    background-color: darkred;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: -90px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+
+  #navbar a.active::after {
+    width: 80%;
+}
+  
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#navbar li {
+    display: inline-block;
+    position: relative;
+}
+#navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    position: relative;
+}
+#navbar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+#navbar a:hover::after {
+    width: 80%;
+}
+       /* Dropdown styles */
+       .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #9e1b1b;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0 0 5px 5px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: display 0.3s ease;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        .dropdown-content a:hover {
+            background-color: #7a1515;
+        }
+        #navbar li.menu-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+         /* Footer Styles */
+         #footer {
+            background-color: darkred;
+            color: white;
+            padding: 20px 40px;
+            position: relative;
+            border-radius: 20px 20px 0 0;
+            margin-top: 10px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-size: 2em;
+            font-family: 'Great Vibes', cursive;
+            text-align: left;
+        }
+        
+        .footer-links {
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .footer-nav {
+            margin: 15px 0;
+            gap: 100px;
+        }
+        
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            transition: color 0.3s;
+            gap: 100px;
+        }
+        
+        .footer-nav a:hover {
+            color: lightgray;
+        }
+        
+        .footer-underline {
+            width: 100%;
+            height: 1px;
+            background-color: white;
+            margin: 10px 0;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 5px; 
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <h1 id="logo">
+            <img src="images/page-logo/logo.png" alt="Vitaly Tea Logo" style="vertical-align: middle; width: auto; height: 1.5em;" />
+            Vitaly Tea
+        </h1>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services/index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="menu.html">Menu</a>
+                <div class="dropdown-content">
+                    <a href="menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="cart.html">Order</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>>
+
+    <div class="credits-container">
+        <h1>Image Credits</h1>
+        <p>We would like to thank the following sources for providing the images used on our website.</p>
+        
+        <!-- Homepage Images -->
+        <h4>Homepage Images</h4>
+        <ul class="credits-list">
+            <li><a href="https://i.pinimg.com/736x/d6/59/9b/d6599b552fe865a186a0870f7c68b78c.jpg" target="Banner1">Banner 1</a></li>
+            <li><a href="https://i.pinimg.com/736x/5d/68/21/5d68211c3b52d594fe339472a0608b1b.jpg" target="Banner2">Banner 2</a></li>
+            <li><a href="https://i.pinimg.com/736x/54/23/76/5423768512e8c84ea670c35f5c9d3159.jpg" target="_blank">Banner 3</a></li>
+            <li><a href="https://i.pinimg.com/736x/a3/c8/2f/a3c82f36635129addf3e13c8ccb972b2.jpg" target="_blank">Banner 4</a></li>
+            <li><a href="https://i.pinimg.com/736x/0d/7c/57/0d7c57da0608cb826bffbbfef10e3ecd.jpg" target="_blank">Banner 5</a></li>
+            <li><a href="https://i.pinimg.com/736x/d5/8c/ad/d58cadbf1a8d356afb2ce2311e40ce07.jpg" target="_blank">Featured Post 1</a></li>
+            <li><a href="https://i.pinimg.com/736x/57/33/06/57330628fb25d9b0b5b2fa3dd788c310.jpg" target="_blank">Featured Post 2</a></li>
+            <li><a href="https://i.pinimg.com/736x/13/6a/9f/136a9f158f4d69866af337a413f803b9.jpg" target="_blank">Featured Post 3</a></li>
+            <li><a href="https://i.pinimg.com/736x/9a/78/00/9a78005bfc978dfbd0b03d4a48089801.jpg" target="_blank">Blog 1 Banner</a></li>
+            <li><a href="https://i.pinimg.com/736x/06/46/9f/06469f80cfc4df84ac7641176437f14c.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/e1/e5/e7/e1e5e758916b3852cf11c9108763d6d5.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/31/46/65/314665bfd6df16a00ffe68e8bc34d591.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/f0/c8/6e/f0c86eaa2fd6225a3c7a415b278a0e71.jpg" target="_blank">Testimonial Pic </a></li>
+            <li><a href="https://i.pinimg.com/736x/43/29/5f/43295f725ee4348c20f26c741b4bda0d.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/10/40/62/104062e0cd2cf76eaf9e61bbe733e388.jpg">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/e5/58/65/e55865c708a3b63663672d30061d4caa.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/c1/ce/20/c1ce202a8e66c6ecc2d0359c3e05a951.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/43/d6/8e/43d68ed805ca9a35784bfeb341cf577d.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/b0/31/35/b031356136086b814d922546fbddfe67.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/d6/21/11/d621117e11b319ea2695fab49079eae4.jpg" target="_blank">Testimonial Pic</a></li>
+            <li><a href="https://pm1.aminoapps.com/6245/0a21783fe2d281831e1b8e67ac47c6b5308c0349_00.jpg" target="_blank">Blog 1 Author</a></li>
+            <li><a href="https://image.tensorartassets.com/cdn-cgi/image/w=150,f=avif/model_showcase/647126596819611211/9908ba52-c17d-a7fa-56b6-a2be4084f46c.png" target="_blank">Blog 2 Author</a></li>
+            <li><a href="https://i.pinimg.com/736x/b1/23/82/b123827c24131a9e05c83d6c3d520b4b.jpg " target="_blank">News & Blogs Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/ff/e1/1f/ffe11fedb5398eef11537c42ff84aed3.jpg" target="_blank">News & Blogs Pic</a></li>
+            <li><a href="https://i.pinimg.com/736x/af/1d/51/af1d51f960c28f0e80aed6df26ce767a.jpg" target="_blank">Blog 2 Banner</a></li>
+            <li><a href="https://i.pinimg.com/736x/1e/12/d7/1e12d7fc8b4baf143c05d9335cfdf295.jpg" target="_blank">Featured Post 4</a></li>
+            <li><a href="https://i.pinimg.com/736x/4f/f3/65/4ff365e915d7d30ef53cd08d084adb83.jpg" target="_blank">Featured Post 5</a></li>
+            <li><a href="https://i.pinimg.com/736x/c5/04/a4/c504a4eb4f742463f7d95e1a471dc858.jpg" target="_blank">Featured Post 6</a></li>
+        </ul>
+    
+        <!-- Services Images -->
+        <h4>Services Images</h4>
+        <ul class="credits-list">
+          <li><a href="https://i.pinimg.com/736x/9b/a9/27/9ba92735c098ad515bbf1198a425c754.jpg" target="_blank">Services Banner</a></li>
+          <li><a href="https://i.pinimg.com/736x/69/ca/f2/69caf2959874f4f953dcefa7a082822b.jpg" target="_blank">Digital Printing Banner</a></li>
+          <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg8Ypxu2OG4KzTVC0nKB1GrdwrBSKfrrupl93q1AY90w&usqp=CAE&s" target="_blank">Services Lamianting </a></li>
+          <li><a href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQWZ-6Rls25_SM6BX8NcY_8n-J8fK8G65n45mneAxu20kLz6BUb" target="_blank">Services Binding </a></li>
+          <li><a href="https://m.media-amazon.com/images/I/71RC2Y4ukiL.jpg" target="_blank">Services Cutting</a></li>
+          <li><a href="https://i.pinimg.com/736x/58/91/bd/5891bdae0bf1f216c7f15bb794ca5b8f.jpg" target="_blank">Laminating 1</a></li>
+          <li><a href="https://m.media-amazon.com/images/I/7165Rh+TlCL._AC_SL1500_.jpg" target="_blank">Laminating 2</a></li>
+          <li><a href="https://cdnimg.webstaurantstore.com/images/products/large/233878/1326316.jpg" target="_blank">Cutting 1 </a></li>
+          <li><a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.onlinestatements.us%2Fflyers%2F&psig=AOvVaw0QQCDtvyApHJhPnBWfvnSA&ust=1742358692397000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLijjKvmkowDFQAAAAAdAAAAABAE" target="_blank">cutting 2</a></li>
+          <li><a href="https://m.media-amazon.com/images/I/41ilowQcV8L._AC_UF894,1000_QL80_.jpg" target="_blank">Binding 1 </a></li>
+          <li><a href="https://www.ragandbonebindery.com/cdn/shop/products/champagne_sa_01_1200x.jpg?v=1652213141" target="_blank">Binding 2</a></li>
+          <li><a href="https://irboxpackaging.com/wp-content/uploads/2022/04/wire-stitching-1024x597.jpg" target="_blank">Binding Saddle Stitch</a></li>
+          <li><a href="https://www.digitalpubfl.com/wp-content/uploads/2023/04/p-bind.jpg" target="_blank">Binding Heated Spine</a></li>
+          <li><a href="https://i.pinimg.com/736x/c3/97/be/c397beacf36868e47d9cdb2135cbeae3--wire-binding-calendar-.jpg" target="_blank">Binding Wire</a></li>
+          <li><a href="https://www.saintytec.com/wp-content/uploads/2024/03/How-is-Ink-Made.png" target="_blank">Digital Printing Ink </a></li>
+          <li><a href="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRuikDeDbRn39PBH2A_ckukRceYaXH0hTtYjbTG6xLbOAbag2Z_" target="_blank">Digital Printing Paper Stock </a></li>
+          <li><a href="https://m.media-amazon.com/images/I/71m3JGRTWaL.jpg" target="_blank">Ink Products 1</a></li>
+          <li><a href="https://m.media-amazon.com/images/I/71bT5DQD8RL.jpg" target="_blank">Ink Products 2</a></li>
+          <li><a href="https://media.officedepot.com/images/f_auto,q_auto,e_sharpen,h_450/products/680276/680276_o51_et_12777903/680276" target="_blank">Ink Products 3</a></li>
+          <li><a href="https://squarefeetceramics.com/wp-content/uploads/Digital-Inks-500x250.jpg" target="_blank">Ink Banner</a></li>
+          <li><a href="https://cdn.pixabay.com/photo/2014/08/26/19/17/paper-428297_960_720.jpg" target="_blank">Paper Stock Banner</a></li>
+          <li><a href="https://ovol.com.sg/wp-content/uploads/2019/12/Art-Card-.jpg" target="_blank">Paper Stock Products 1</a></li>
+          <li><a href="https://www.printerland.co.uk/blog/wp-content/uploads/2019/01/a3-paper-stack-1024x683.jpg" target="_blank">Paper Stock Products 2</a></li>
+          <li><a href="https://img.freepik.com/premium-photo/crumpled-paper-background-8k-hd-photography_1033957-33305.jpg?w=360" target="_blank">Stock Paper 3</a></li>
+          
+        </ul>
+    
+        <!-- Menu Images -->
+        <h4>Menu Images</h4>
+        <ul class="credits-list">
+            <li><a href="https://www.canva.com/ " target="_blank">Cold Drinks Bannerk</a></li>
+            <li><a href="https://images.app.goo.gl/o7pkEQtyu1SUorNr8 " target="_blank">Sandwiches Banner</a></li>
+            <li><a href="https://images.app.goo.gl/3hWkU6ze9qzMNREZ7 " target="_blank">Warm Drinks Bannerk</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/uP4KCpwQNKdRoSDK6 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/6RWz46g1MoB3gRid6 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/hhn7SAr8nzXWdD6a6 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/aUNxSbAFHtNegyr17 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/g8iG94t21wxBz3U48 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/axef2JEfAxT1enuo7 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/NuXBFo3bSUv99Am79 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/8grs51LGKEUCYqTC9" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/eBWkfnkackwZesH4A " target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/rdHHss1HqjP3enxB9" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/Go65TY8gKGbSNp1a8" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/G23rjM1f7grwdpXK8" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/ESaXF5qY9TyARYJK9" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/MH3oMPjbE6rK4KR7A" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/qvyV6vdWo3rHMt8U8" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/vvkpdvfBP6GiX7BSA" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/tVaJFhS5RktNMPqb7" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/cbmmAhRZCGVfWyS58" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/eKBNoMrU9BFga89j8" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/WTgzAiMwEezsSftf7" target="_blank">Sandwiches</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/Jee2GWguQ5tv7pZs5" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/VYHh8DtfrD63Yn9g9" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/xZfWWT9QzPzjopri6" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/DLDpotcQtdu8VzST6" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/3Pk4A4KXZwXfwsqz8" target="_blank">Sandwiches</a></li>
+        </ul>
+    
+        <!-- Order Images -->
+        <h4>Order Images</h4>
+        <ul class="credits-list">
+            <li><a href="https://www.canva.com/ " target="_blank">Cold Drinks Bannerk</a></li>
+            <li><a href="https://images.app.goo.gl/o7pkEQtyu1SUorNr8 " target="_blank">Sandwiches Banner</a></li>
+            <li><a href="https://images.app.goo.gl/3hWkU6ze9qzMNREZ7 " target="_blank">Warm Drinks Bannerk</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/uP4KCpwQNKdRoSDK6 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/6RWz46g1MoB3gRid6 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/hhn7SAr8nzXWdD6a6 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/aUNxSbAFHtNegyr17 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/g8iG94t21wxBz3U48 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/axef2JEfAxT1enuo7 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/NuXBFo3bSUv99Am79 " target="_blank">Cold Drink Pic</a></li>
+            <li><a href="https://images.app.goo.gl/8grs51LGKEUCYqTC9" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/eBWkfnkackwZesH4A " target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/rdHHss1HqjP3enxB9" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/Go65TY8gKGbSNp1a8" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/G23rjM1f7grwdpXK8" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/ESaXF5qY9TyARYJK9" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/MH3oMPjbE6rK4KR7A" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/qvyV6vdWo3rHMt8U8" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/vvkpdvfBP6GiX7BSA" target="_blank">Warm Drinks Pic</a></li>
+            <li><a href="https://images.app.goo.gl/tVaJFhS5RktNMPqb7" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/cbmmAhRZCGVfWyS58" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/eKBNoMrU9BFga89j8" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/WTgzAiMwEezsSftf7" target="_blank">Sandwiches</a></li>
+            <li><a href="https://www.canva.com/" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/Jee2GWguQ5tv7pZs5" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/VYHh8DtfrD63Yn9g9" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/xZfWWT9QzPzjopri6" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/DLDpotcQtdu8VzST6" target="_blank">Sandwiches</a></li>
+            <li><a href="https://images.app.goo.gl/3Pk4A4KXZwXfwsqz8" target="_blank">Sandwiches</a></li>
+        </ul>
+    
+        <!-- About Us Images -->
+        <h4>About Us Image</h4>
+        <ul class="credits-list">
+          <li><a href="https://totalprint.co.za/news/why-quality-printing-elevates-your-brand/" target="_blank">About Us Banner</a></li>
+        </ul>
+    
+        <!-- Contact Images -->
+        <h4>Contact Image</h4>
+        <ul class="credits-list">
+          <li><a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffreebackground%2Fcup-of-latte-on-wooden-table_3171730.html&psig=AOvVaw17xatD5oOhzRFh4eBQP4rW&ust=1742360952528000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNCViJLvkowDFQAAAAAdAAAAABAE" target="_blank">Contact Us Banner</a></li>
+        </ul>
+    
+        <p class="appreciation">Thank you for your amazing work!</p>
+      </div>
+
+   <!-- Footer -->
+   <div id="footer">
+    <div class="footer-content">
+    <div class="footer-logo">Vitaly Tea</div>
+    <div class="footer-links">
+    <div class="footer-nav">
+    <a href="services/index.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="credits.html">Credits</a>
+    </div>
+    </div>
+    </div>
+    
+    <div class="footer-underline"></div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <div class="social-icons">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+    </div>
+</div>
+    <script>
+        // Basic cart functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            const cartCount = document.getElementById("cart-count");
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cartCount.innerText = cart.length;
+        });
+    </script>
+</body>
+</html>

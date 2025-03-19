@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog 2</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+<!-- Preferred favicon format -->
+<link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" href="images/icons/favicon.png">
+
+<!-- Windows Tiles -->
+<meta name="msapplication-TileImage" content="images/icons/favicon.png">
+
+   
+   
+   <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        #header {
+            padding: 20px;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: darkred;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #header h1:hover {
+            transform: translateY(-10px);
+        }
+
+/* Navbar styles */
+
+#navbar {
+    background-color: darkred;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: -5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+
+  #navbar a.active::after {
+    width: 80%;
+}
+  
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#navbar li {
+    display: inline-block;
+    position: relative;
+}
+#navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    position: relative;
+}
+#navbar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+#navbar a:hover::after {
+    width: 80%;
+}
+       /* Dropdown styles */
+       .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #9e1b1b;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0 0 5px 5px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: display 0.3s ease;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        .dropdown-content a:hover {
+            background-color: #7a1515;
+        }
+        #navbar li.menu-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Blog Header */
+        .header {
+            background: linear-gradient(to right, #8B0000, #8B0000);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            clip-path: ellipse(75% 100% at 50% 0%);
+            border-top: 3px solid white;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .header h1:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Blog Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .author-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .author-info img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+        }
+
+        .author-info p {
+            margin: 5px 0;
+        }
+        .author-info p em {
+    font-size: 0.85em; /* Adjust as needed */
+}
+
+
+        .blog-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+        }
+
+        .blog-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .publish-date {
+            text-align: left;
+            color: grey;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .back-button {
+        display: block;
+        margin: 80px 0 0 auto;
+        padding: 20px; 
+        color: #8B0000;
+        text-align: right;
+        text-decoration: none;
+        font-size: 3em; 
+        background-color: transparent;
+        border: none;
+        transition: color 0.3s ease-in-out;
+        }
+
+        .back-button:hover {
+        color: #B22222;
+        }
+       
+        .content h2 {
+            font-family: 'Playfair Display', serif;
+            color: #8B0000;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .content h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #8B0000;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .content h2:hover::after {
+            width: 100%;
+        }
+
+        /* Featured Posts */
+        .featured-posts {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 2px solid #8B0000;
+        }
+
+        .featured-posts h2 {
+            font-family: 'Playfair Display', serif;
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+
+        .featured-posts .posts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .featured-post {
+            width: 30%;
+            margin-top: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .featured-post img {
+        width: 100%;
+        height: 200px; 
+        object-fit: cover; 
+        border-radius: 10px 10px 0 0;
+        }
+        .featured-post h3 {
+            font-family: 'Playfair Display', serif;
+            color: #8B0000;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+
+        .featured-post p {
+            margin: 0 10px 10px;
+            color: #666;
+        }
+
+        .featured-post a {
+            color: #8B0000;
+            text-decoration: none;
+            display: block;
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: darkred;
+            color: white;
+            padding: 20px 40px;
+            position: relative;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            font-size: 2em;
+            font-family: 'Great Vibes', cursive;
+            text-align: left;
+        }
+
+        .footer-links {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: lightgray;
+        }
+
+        .footer-underline {
+            width: 100%;
+            height: 1px;
+            background-color: white;
+            margin: 20px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .social-icons {
+        display: flex;
+        gap: 15px;
+         align-items: center; 
+        margin-top: 5px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: lightgray;
+        }
+
+        @media (max-width: 768px) {
+            #header h1 {
+                font-size: 2.5em;
+            }
+
+            #navbar ul {
+                flex-direction: column;
+            }
+
+            #navbar a {
+                padding: 10px;
+            }
+
+            .featured-post {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #header h1 {
+                font-size: 2em;
+            }
+
+            .featured-post {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1><img src="images/page-logo/logo.png" alt="Vitaly Tea" style="vertical-align: middle; width: auto; height: 1.5em;" />Vitaly Tea</h1>
+    </div>
+
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services/index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="menu.html">Menu</a>
+                <div class="dropdown-content">
+                    <a href="menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="cart.html">Order</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h1>Printing Innovations </h1>
+    </div>
+
+    <div class="container">
+        <div class="author-info">
+            <img src="images/home-page/author2.jfif" alt="Author Picture">
+            <p><strong>Beaumont Adam Del Fierro</strong></p> 
+            <p><em>beaudelfierro@gmail.com</em></p> 
+        </div>
+
+        <img src="images/home-page/blog2h.png" alt="Blog Picture" class="blog-image">
+
+        <div class="publish-date">Published Date: December 7, 2025</div>
+
+        <div class="content">
+            <h2>The Future Printing</h2>
+            <p>At Vitaly Tea, we are not just about great food; we are also committed to providing top-notch printing services. Our dedication to innovation ensures that we remain at the forefront of the printing industry, offering our customers the best in quality and efficiency.</p>
+            
+            <h2>Advanced Printing Technologies</h2>
+            <p>Our facility is equipped with the latest printing technologies, allowing us to handle a wide range of printing needs. From high-resolution digital prints to large-format projects, our state-of-the-art equipment ensures that your prints look professional and polished.</p>  
+
+            <h2>Eco-friendly Practices</h2>
+            <p>Sustainability is important to us, which is why we've adopted eco-friendly printing practices. We use inks and materials that are environmentally safe and implement processes that reduce waste. Our commitment to the environment is just another reason to choose Vitaly Tea for your printing needs.</p> 
+
+            <h2>Customization Options</h2>
+            <p>We understand that every project is unique, which is why we offer a variety of customization options. Whether you need specific colors, materials, or finishes, our team is here to help you achieve the exact look you envision for your printed materials</p> 
+
+            <h2>Expert Team Support</h2>
+            <p>We understand that every project is unique, which is why we offer a variety of customization options. Whether you need specific colors, materials, or finishes, our team is here to help you achieve the exact look you envision for your printed materials</p> 
+
+            <h2>Fast Turnaround Times</h2>
+            <p>We know that time is of the essence, which is why we offer fast turnaround times without compromising on quality. Our efficient processes mean you can expect your prints to be ready when you need them, so you can focus on what matters most.</p> 
+
+            <h2>Community Engagement</h2>
+            <p>We are proud to be a part of the local community and regularly engage in community initiatives. From supporting local events to offering discounts for nonprofit organizations, we are committed to making a positive impact.</p> 
+
+            <h2>Continuous Improvement</h2>
+              <p>The printing industry is constantly evolving, and so are we. We are committed to continuous improvement, regularly updating our equipment and processes to better serve our customers. Your satisfaction is our top priority, and we strive to exceed your expectations.</p> 
+        </div>
+
+        <div class="featured-posts">
+            <h2>Featured Posts</h2>
+            <div class="posts">
+                <div class="featured-post">
+                    <img src="images/home-page/fppic1.jpg" alt="Featured Post 1">
+                    <h3><a href="#post1">Revolutionizing Printing with Innovation                    </a></h3>
+                    <p>Discover how our cutting-edge technology boosts efficiency, speed, and sustainability.
+
+                    </p>
+                </div>
+                <div class="featured-post">
+                    <img src="images/home-page/fppic2.jpg" alt="Featured Post 2">
+                    <h3><a href="#post2">The Future of Sustainable Printing</a></h3>
+                    <p>Explore eco-friendly practices that reduce waste and conserve resources.
+
+                    </p>
+                </div>
+                <div class="featured-post">
+                    <img src="images/home-page/fppic3.jpg" alt="Featured Post 3">
+                    <h3><a href="#post3">Elevating Print Standards</a></h3>
+                    <p>Experience advanced features that set new print standards.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">→</a> 
+    </div>
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="services/index.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+
+        <div class="footer-underline"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 All Rights Reserved</p>
+            <div class="social-icons">
+                <p>Follow us</p>
+                <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

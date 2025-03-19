@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+    <title>Laminating</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Laminating/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
+    <!-- Preferred favicon format -->
+    <link rel="icon" type="image/x-icon" href="../../../images/icons/favicon.ico">
+
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" href="../../../images/icons/favicon.png">
+    
+    <!-- Windows Tiles -->
+    <meta name="msapplication-TileImage" content="../../../images/icons/favicon.png">
+    
+</head>
+<body>
+
+    <div id="header">
+        <h1>
+        <img src="../Binding/assets/img/logo.png" alt="Vitaly Tea Logo" style="vertical-align: middle; width: auto; height: 1.5em;" />
+        Vitaly Tea
+        </h1>
+    </div>
+        
+    <div id="navbar">
+        <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="../../../menu.html">Menu</a> 
+                <div class="dropdown-content">
+                    <a href="../../../menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="../../../menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="../../../menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="../../../cart.html">Order</a></li>
+            <li><a href="../../../aboutus.html">About Us</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <header class="banner">
+        <h1 style="text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);">Laminating</h1>
+    </header>
+
+  
+
+    <section class="about-section">
+    
+        <p>
+            <span class="highlight">L</span> 
+            aminating in printing refers to the process of applying a thin layer of plastic film to printed materials to enhance their durability, appearance, and protection. This process helps shield prints from moisture, dirt, scratches, and general wear and tear, making them last longer. There are two main types of lamination: glossy and matte. Glossy lamination enhances colors and gives prints a vibrant, reflective finish, while matte lamination provides a smooth, non-reflective surface for a more sophisticated look. Laminating is commonly used for items that require frequent handling, such as business cards, menus, posters, ID cards, and book covers. It also improves the rigidity of the material, making it feel more premium and professional. The process can be done through thermal lamination, where heat activates the adhesive, or cold lamination, which uses pressure-sensitive adhesive. Choosing lamination in printing ensures that documents maintain their quality over time, providing both aesthetic and functional benefits.
+        </p>
+    </section>
+
+    <section class="services-section">
+        <h3>Services Include</h3>
+        <div class="services-list">
+            <div class="service-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Enhance durability and aesthetics with high-quality laminating.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Protect surfaces from moisture, scratches, and wear, ensuring a sleek and long-lasting finish.</p>
+            </div>
+        </div>
+
+        <div class="image-gallery">
+            <img src="../Laminating/assets/img/lami2.jpg" alt="">
+            <img src="../Laminating/assets/img/lamilami.jpg" alt="">
+        </div>
+    </section>
+
+  
+    <section class="solution-section">
+        <div class="goback">
+            <div class="back">
+                <a href="../../index.html">Go Back</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="../../index.html">Services</a>
+        <a href="../../../contact.html">Contact Us</a>
+        <a href="../../../aboutus.html">About Us</a>
+        <a href="../../../credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+        
+        <div class="footer-underline"></div>
+        
+        <div class="footer-bottom">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <div class="social-icons">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        </div>
+        
+    <script>
+        function setActiveLink() {
+    const links = document.querySelectorAll("#navbar a");
+    
+    links.forEach(link => {
+    link.addEventListener("click", function() {
+    links.forEach(link => link.classList.remove("active"));
+    this.classList.add("active");
+    });
+    });
+    }
+    
+    document.addEventListener("DOMContentLoaded", setActiveLink);
+    </script>
+
+</body>
+</html>

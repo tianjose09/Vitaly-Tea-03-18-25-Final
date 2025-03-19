@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Stock</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../../../Digital Printing/Pages/Paper Stock/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="../../../../assets/img/favicon.png">
+
+</head>
+<body>
+
+    <div id="header">
+        <h1>
+        <img src="../../Pages/Ink/img/logo.png" alt="Vitaly Tea" style="vertical-align: middle; width: auto; height: 1.5em;" />Vitaly Tea</h1>
+    </div>
+        
+    <div id="navbar">
+        <ul>
+            <li><a href="../../../../../index.html">Home</a></li>
+            <li><a href="../../../../index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="../../../../../menu.html">Menu</a> 
+                <div class="dropdown-content">
+                    <a href="../../../../../menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="../../../../../menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="../../../../../menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="../../../../../cart.html">Order</a></li>
+            <li><a href="../../../../../aboutus.html">About Us</a></li>
+            <li><a href="../../../../../contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+    <header class="banner">
+        <img src="../../../Digital Printing/Pages/Paper Stock/img/banner.jpg" alt="Ink Banner">
+        <h1>Paper Stock</h1>
+    </header>
+
+    <section class="header-accent-bar"></section>
+
+    <section class="about-ink">
+        <p>Paper stock refers to the thickness, weight, and quality of paper used for printing various materials. It plays a crucial role in the final look, feel, and durability of printed products. Paper stock is available in different finishes, weights, and compositions, making it suitable for a wide range of printing applications.</p>
+    </section>
+
+    <section class="ink-wave">
+        <img src="../../../Digital Printing/Pages/Ink/img/wave1-removebg-preview.png" alt="Wave Effect">
+        <img src="../../../Digital Printing/Pages/Ink/img/wave1-removebg-preview.png" alt="Wave Effect">
+        <img src="../../../Digital Printing/Pages/Ink/img/wave1-removebg-preview.png" alt="Wave Effect">
+        <img src="../../../Digital Printing/Pages/Ink/img/wave1-removebg-preview.png" alt="Wave Effect">
+    </section>
+
+    <section class="ink-brands-section">
+        <div class="section-title">
+            <h2>Different Types of Paper Stock</h2>
+        </div>
+
+        <div class="carousel-container">
+            <!-- Previous Button -->
+            <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">❮</button>
+
+            <!-- Carousel Items -->
+            <div class="carousel-wrapper">
+                <div class="carousel" id="ink-carousel">
+                    <div class="carousel-item">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="../../../Digital Printing/Pages/Paper Stock/img/glossy-removebg-preview.png" alt="Glossy" class="brand-img">
+                                    <h3 class="brand-title">Glossy</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Glossy paper is a high-shine printing material that enhances color vibrancy and sharpness, making images and text appear crisp and eye-catching.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="../../../Digital Printing/Pages/Paper Stock/img/matte-removebg-preview.png" alt="Matte" class="brand-img">
+                                    <h3 class="brand-title">Matte</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Matte paper is a high-quality, non-glossy printing material that provides a smooth and soft finish, reducing glare and fingerprints.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="../../../Digital Printing/Pages/Paper Stock/img/text-removebg-preview.png" alt="Textured" class="brand-img">
+                                    <h3 class="brand-title">Textured</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Textured paper is a high-quality printing material with a distinctive surface that adds depth and character to printed designs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="carousel-btn next-btn" onclick="moveCarousel(1)">❯</button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators" id="ink-carousel-indicators">
+                <span class="indicator active" onclick="jumpToSlide(0)"></span>
+                <span class="indicator" onclick="jumpToSlide(1)"></span>
+                <span class="indicator" onclick="jumpToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="go-back-section">
+        <div class="back-button">
+            <a href="../../../Digital Printing/index.html">Go Back</a>
+        </div>
+    </section>
+
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="../../../../index.html">Services</a>
+        <a href="../../../../../contact.html">Contact Us</a>
+        <a href="../../../../../aboutus.html">About Us</a>
+        <a href="../../../../../credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+        <div class="footer-underline"></div>
+        
+        <div class="footer-bottom">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <div class="social-icons">
+        <p>Follow us</p>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        </div>
+        </div>
+        
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.getElementById("ink-carousel");
+            const items = carousel.querySelectorAll(".carousel-item");
+            const totalSlides = items.length;
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+
+            updateCarousel(carousel, currentIndex);
+        }
+
+        function jumpToSlide(index) {
+            const carousel = document.getElementById("ink-carousel");
+            currentIndex = index;
+            updateCarousel(carousel, currentIndex);
+        }
+
+        function updateCarousel(carousel, index) {
+            const translateXValue = -index * 100;
+            carousel.style.transform = `translateX(${translateXValue}%)`;
+
+            const indicators = document.querySelectorAll(".carousel-indicators .indicator");
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle("active", i === index);
+            });
+        }
+
+        function flipCard(card) {
+            card.classList.toggle("flipped");
+        }
+    </script>
+
+<script>
+    function setActiveLink() {
+const links = document.querySelectorAll("#navbar a");
+
+links.forEach(link => {
+link.addEventListener("click", function() {
+links.forEach(link => link.classList.remove("active"));
+this.classList.add("active");
+});
+});
+}
+
+document.addEventListener("DOMContentLoaded", setActiveLink);
+</script>
+
+</body>
+</html>

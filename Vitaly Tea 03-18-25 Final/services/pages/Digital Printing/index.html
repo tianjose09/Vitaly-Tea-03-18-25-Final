@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+    <title>Digital Printing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="../Digital Printing/assets/css/style.css" />
+
+    <!-- Preferred favicon format -->
+    <link rel="icon" type="image/x-icon" href="../../../images/icons/favicon.ico">
+
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" href="../../../images/icons/favicon.png">
+    
+    <!-- Windows Tiles -->
+    <meta name="msapplication-TileImage" content="../../../images/icons/favicon.png">
+    
+
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <img src="../Binding/assets/img/logo.png" alt="Vitaly Tea Logo" class="logo" />
+            Vitaly Tea
+        </h1>
+    </header>
+
+    <div id="navbar">
+        <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="../../../menu.html">Menu</a> 
+                <div class="dropdown-content">
+                    <a href="../../../menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="../../../menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="../../../menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="../../../cart.html">Order</a></li>
+            <li><a href="../../../aboutus.html">About Us</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="news-and-blogs">
+        <div class="content-container">
+            <h2><b>Digital Printing</b></h2>
+            <p>Digital printing transfers digital images directly onto various materials, offering high-quality, fast, and cost-effective production without the need for traditional printing plates. It enables on-demand printing with customizable designs, making it ideal for short runs and personalized products.</p>
+        </div>
+
+        <div class="blog-posts">
+            <div class="blog-card">
+                <div class="blog-title"><b>Ink</b></div>
+                <p>It is essential in digital printing as it creates high-quality images and text on various materials.</p>
+                <img src="../Digital Printing/assets/img/ink.jpg" alt="Ink" />
+                <a href="../Digital Printing/Pages/Ink/index.html" class="read-more"><i class="fas fa-arrow-up"></i></a>
+            </div>
+            <div class="blog-card">
+                <div class="blog-title"><b>Paper Stock</b></div>
+                <p>Paper stock is crucial in digital printing as it affects the print quality, and overall appearance of the product.</p>
+                <img src="../Digital Printing/assets/img/paperstock.jpg" alt="Paper Stock" />
+                <a href="../Digital Printing/Pages/Paper Stock/index.html" class="read-more"><i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="go-back-section">
+        <div class="back-button">
+            <a href="../../index.html">Go Back</a>
+        </div>
+    </section>
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="../../index.html">Services</a>
+        <a href="../../../contact.html">Contact Us</a>
+        <a href="../../../aboutus.html">About Us</a>
+        <a href="../../../credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+        <div class="footer-underline"></div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 All Rights Reserved</p>
+            <div class="social-icons">
+                <p>Follow us</p>
+                <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script>
+        function setActiveLink() {
+            const links = document.querySelectorAll("#navbar a");
+            links.forEach(link => {
+                link.addEventListener("click", function() {
+                    links.forEach(link => link.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+        }
+        document.addEventListener("DOMContentLoaded", setActiveLink);
+    </script>
+</body>
+</html>

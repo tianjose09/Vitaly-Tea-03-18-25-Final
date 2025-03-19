@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+<!-- Preferred favicon format -->
+<link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" href="images/icons/favicon.png">
+
+<!-- Windows Tiles -->
+<meta name="msapplication-TileImage" content="images/icons/favicon.png">
+
+    
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        
+        #header h1 {
+        margin: 0;
+        font-size: 3em;
+        color: darkred;
+        font-family: 'Great Vibes', cursive;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+
+#logo {
+    font-size: 3em;
+    color: darkred;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    flex: 1;
+}
+
+#cart-container {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cart-link {
+    text-decoration: none;
+    color: darkred;
+    font-size: 24px;
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
+
+/* Navbar styles */
+
+#navbar {
+  background-color: darkred;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: -5px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+#navbar a.active::after {
+  width: 80%;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#navbar li {
+  display: inline-block;
+  position: relative;
+}
+#navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  position: relative;
+}
+#navbar a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+}
+
+#navbar a:hover::after {
+  width: 80%;
+}
+
+     /* Dropdown styles */
+     .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #9e1b1b;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          border-radius: 0 0 5px 5px;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: display 0.3s ease;
+      }
+      .dropdown-content a {
+          color: white;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: center;
+      }
+      .dropdown-content a:hover {
+          background-color: #7a1515;
+      }
+      #navbar li.menu-dropdown:hover .dropdown-content {
+          display: block;
+      }
+        
+        /* Menu section styles */
+        .menu-section {
+        padding: 5px 0 40px 0;
+        scroll-margin-top: 60px;
+        }
+        .menu-banner {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .menu-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .menu-banner h2 {
+            font-size: 3em;
+            position: relative;
+            z-index: 1;
+            font-family: 'Great Vibes', cursive;
+            margin: 0;
+        }
+        .cold-drinks-banner {
+            background-image: url('images/menu-banners/cold-drinks-banner.png');
+        }
+        .warm-drinks-banner {
+            background-image: url('images/menu-banners/warm-drinks-banner.png');
+        }
+        .sandwiches-banner {
+            background-image: url('images/menu-banners/sandwhiches-banner.png');
+        }
+        
+        /* Carousel styles - Improved for better display */
+        .carousel-container {
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .menu-card {
+            width: 250px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        .menu-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-title {
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: darkred;
+        }
+        
+/* Popup Styling */
+.menu-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.popup-close:hover {
+    color: darkred;
+}
+
+.popup-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.popup-title {
+    font-size: 1.8em;
+    color: darkred;
+    margin-bottom: 10px;
+}
+
+.popup-description {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.popup-price {
+    font-weight: bold;
+    font-size: 1.4em;
+    color: darkred;
+}
+
+/* Quantity Selector */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.quantity-value {
+    font-size: 18px;
+    font-weight: bold;
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    width: 100%;
+    background-color: darkred;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #9e1b1b;
+}
+
+/* Notification Message */
+.added-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: darkred;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+      
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: darkred;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .carousel-btn:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.05);
+        }
+        .prev-btn {
+            left: 15px;
+        }
+        .next-btn {
+            right: 15px;
+        }
+        
+        /* Carousel indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .indicator.active {
+            background-color: darkred;
+        }
+        
+        #footer {
+  background-color: darkred;
+  color: white;
+  padding: 20px 40px;
+  position: relative;
+  border-radius: 20px 20px 0 0;
+  margin-top: 100px;
+  }
+  
+  .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+  
+  .footer-logo {
+  font-size: 2em;
+  font-family: 'Great Vibes', cursive;
+  text-align: left;
+  }
+  
+  .footer-links {
+  text-align: center;
+  flex-grow: 1;
+  }
+  
+  .footer-nav {
+  margin: 15px 0;
+  gap: 100px;
+  
+  }
+  
+  .footer-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+  transition: color 0.3s;
+  gap: 100px;
+  
+  }
+  
+  .footer-nav a:hover {
+  color: lightgray;
+  }
+  
+  .footer-underline {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 10px 0;
+  }
+  
+  .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  }
+  
+  .social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 5px; 
+  }
+  .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+  color: lightgray;
+  }
+        
+        /* Add a visual indicator for dropdown menu items */
+        .menu-dropdown > a::after {
+            content: "▼";
+            font-size: 0.7em;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 768px) {
+            #header h1 {
+                font-size: 2.5em;
+            }
+            #navbar ul {
+                flex-direction: column;
+            }
+            #navbar a {
+                padding: 10px;
+            }
+            .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                margin-bottom: 10px;
+                display: none;
+            }
+            #navbar li.menu-dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .carousel-item {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-nav {
+                gap: 20px;
+            }
+            .popup-image {
+                float: none;
+                margin: 0 auto 15px auto;
+                display: block;
+            }
+            .popup-title, .popup-description, .popup-price {
+                text-align: center;
+            }
+        }
+        @media (max-width: 480px) {
+            #header h1 {
+                font-size: 2em;
+            }
+            .menu-banner h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+        <div id="header">
+            <h1><img src="images/page-logo/logo.png" alt="Vitaly Tea" style="vertical-align: middle; width: auto; height: 1.5em;" />Vitaly Tea</h1>
+        </div>
+        <div id="cart-container">
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+    
+        
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services/index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="menu.html">Menu</a>
+                <div class="dropdown-content">
+                    <a href="menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="cart.html">Order</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Cold Drinks Section -->
+    <section id="cold-drinks" class="menu-section">
+        <div class="menu-banner cold-drinks-banner">
+            <h2>Cold Drinks</h2>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="moveCarousel(-1, 'cold-drinks-carousel')">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel" id="cold-drinks-carousel">
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('cold-1')">
+                        <img src="images/menu-items/iced-americano.png" alt="Iced Americano" class="menu-img">
+                        <h3 class="menu-title">Iced Americano</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('cold-2')">
+                        <img src="images/menu-items/iced-latte.png" alt="Iced Latte" class="menu-img">
+                        <h3 class="menu-title">Iced Latte</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('cold-3')">
+                        <img src="images/menu-items/iced-mocha.png" alt="Iced Mocha" class="menu-img">
+                        <h3 class="menu-title">Iced Mocha</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('cold-4')">
+                        <img src="images/menu-items/iced-caramel-macchiato.png" alt="Iced Caramel Macchiato" class="menu-img">
+                        <h3 class="menu-title">Iced Caramel Macchiato</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('cold-5')">
+                        <img src="images/menu-items/cold-brew.png" alt="Cold Brew Coffee" class="menu-img">
+                        <h3 class="menu-title">Cold Brew Coffee</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('cold-6')">
+                        <img src="images/menu-items/iced-matcha-latte.png" alt="Iced Matcha Latte" class="menu-img">
+                        <h3 class="menu-title">Iced Matcha Latte</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('cold-7')">
+                        <img src="images/menu-items/iced-chai-latte.png" alt="Iced Chai Latte" class="menu-img">
+                        <h3 class="menu-title">Iced Chai Latte</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('cold-8')">
+                        <img src="images/menu-items/iced-hojicha-latte.png" alt="Iced Hojicha Latte" class="menu-img">
+                        <h3 class="menu-title">Iced Hojicha Latte</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('cold-9')">
+                        <img src="images/menu-items/fruit-iced-tea.png" alt="Fruit Iced Tea" class="menu-img">
+                        <h3 class="menu-title">Fruit Iced Tea</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('cold-10')">
+                        <img src="images/menu-items/strawberry-lemonade.png" alt="Strawberry Lemonade" class="menu-img">
+                        <h3 class="menu-title">Strawberry Lemonade</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" onclick="moveCarousel(1, 'cold-drinks-carousel')">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-indicators" id="cold-drinks-indicators">
+                <span class="indicator active" onclick="jumpToSlide(0, 'cold-drinks-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(1, 'cold-drinks-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(2, 'cold-drinks-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(3, 'cold-drinks-carousel')"></span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Warm Drinks Section -->
+    <section id="warm-drinks" class="menu-section">
+        <div class="menu-banner warm-drinks-banner">
+            <h2>Warm Drinks</h2>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="moveCarousel(-1, 'warm-drinks-carousel')">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel" id="warm-drinks-carousel">
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('warm-1')">
+                        <img src="images/menu-items/espresso.png" alt="Espresso" class="menu-img">
+                        <h3 class="menu-title">Espresso</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('warm-2')">
+                        <img src="images/menu-items/cappuccino.png" alt="Cappuccino" class="menu-img">
+                        <h3 class="menu-title">Cappuccino</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('warm-3')">
+                        <img src="images/menu-items/latte.png" alt="Latte" class="menu-img">
+                        <h3 class="menu-title">Latte</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('warm-4')">
+                        <img src="images/menu-items/mocha.png" alt="Mocha" class="menu-img">
+                        <h3 class="menu-title">Mocha</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('warm-5')">
+                        <img src="images/menu-items/caramel-macchiato.png" alt="Caramel Macchiato" class="menu-img">
+                        <h3 class="menu-title">Caramel Macchiato</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('warm-6')">
+                        <img src="images/menu-items/chai-latte.png" alt="Chai Latte" class="menu-img">
+                        <h3 class="menu-title">Chai Latte</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('warm-7')">
+                        <img src="images/menu-items/matcha-latte.png" alt="Matcha Latte" class="menu-img">
+                        <h3 class="menu-title">Matcha Latte</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('warm-8')">
+                        <img src="images/menu-items/hot-chocolate.png" alt="Hot Chocolate" class="menu-img">
+                        <h3 class="menu-title">Hot Chocolate</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('warm-9')">
+                        <img src="images/menu-items/hojicha-latte.png" alt="Hojicha Latte" class="menu-img">
+                        <h3 class="menu-title">Hojicha Latte</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('warm-10')">
+                        <img src="images/menu-items/flat-white.png" alt="Flat White" class="menu-img">
+                        <h3 class="menu-title">Flat White</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" onclick="moveCarousel(1, 'warm-drinks-carousel')">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-indicators" id="warm-drinks-indicators">
+                <span class="indicator active" onclick="jumpToSlide(0, 'warm-drinks-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(1, 'warm-drinks-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(2, 'warm-drinks-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(3, 'warm-drinks-carousel')"></span>
+            </div>
+    </section>
+    
+    <!-- Sandwiches Section -->
+    <section id="sandwiches" class="menu-section">
+        <div class="menu-banner sandwiches-banner">
+            <h2>Sandwiches</h2>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="moveCarousel(-1, 'sandwiches-carousel')">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel" id="sandwiches-carousel">
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('sandwich-1')">
+                        <img src="images/menu-items/classic-club-sandwich.png" alt="Classic Club Sandwich" class="menu-img">
+                        <h3 class="menu-title">Classic Club Sandwich</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('sandwich-2')">
+                        <img src="images/menu-items/chicken-pesto-panini.png" alt="Chicken Pesto Panini" class="menu-img">
+                        <h3 class="menu-title">Chicken Pesto Panini</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('sandwich-3')">
+                        <img src="images/menu-items/tuna-melt.png" alt="Tuna Melt" class="menu-img">
+                        <h3 class="menu-title">Tuna Melt</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('sandwich-4')">
+                        <img src="images/menu-items/ham-cheese-croissant.png" alt="Ham & Cheese Croissant" class="menu-img">
+                        <h3 class="menu-title">Ham & Cheese Croissant</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('sandwich-5')">
+                        <img src="images/menu-items/caprese-sandwich.png" alt="Caprese Sandwich" class="menu-img">
+                        <h3 class="menu-title">Caprese Sandwich</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('sandwich-6')">
+                        <img src="images/menu-items/BBQ-pulled-pork-sandwich.png" alt="BBQ Pulled Pork Sandwich" class="menu-img">
+                        <h3 class="menu-title">BBQ Pulled Pork Sandwich</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('sandwich-7')">
+                        <img src="images/menu-items/avocado-egg-toast.png" alt="Avocado & Egg Toast" class="menu-img">
+                        <h3 class="menu-title">Avocado & Egg Toast</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('sandwich-8')">
+                        <img src="images/menu-items/BLT-sandwich.png" alt="BLT Sandwich" class="menu-img">
+                        <h3 class="menu-title">BLT Sandwich</h3>
+                    </div>
+                    <div class="menu-card" onclick="openPopup('sandwich-9')">
+                        <img src="images/menu-items/salmon-cream-cheese-bagel.png" alt="Salmon & Cream Cheese Bagel" class="menu-img">
+                        <h3 class="menu-title">Salmon & Cream Cheese Bagel</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="menu-card" onclick="openPopup('sandwich-10')">
+                        <img src="images/menu-items/mushroom-swiss-melt.png" alt="Mushroom & Swiss Melt" class="menu-img">
+                        <h3 class="menu-title">Mushroom & Swiss Melt</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" onclick="moveCarousel(1, 'sandwiches-carousel')">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-indicators" id="sandwiches-indicators">
+                <span class="indicator active" onclick="jumpToSlide(0, 'sandwiches-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(1, 'sandwiches-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(2, 'sandwiches-carousel')"></span>
+                <span class="indicator" onclick="jumpToSlide(3, 'sandwiches-carousel')"></span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Popups for menu items - Cold Drinks -->
+    <div id="cold-1" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-1')">&times;</span>
+            <img src="images/menu-items/iced-americano.png" alt="Iced Americano" class="popup-image">
+            <h3 class="popup-title">Iced Americano</h3>
+            <p class="popup-description">Refreshing espresso over ice with water.</p>
+            <div class="popup-price">₱140</div>
+    
+            <!-- Quantity Selector -->
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+    
+            <!-- Add to Cart Button -->
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Americano', 140, 'cold-1', 'images/menu-items/iced-americano.png')">Add to Cart</button>
+        </div>
+    </div>    
+    
+    <div id="cold-2" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-2')">&times;</span>
+            <img src="images/menu-items/iced-latte.png" alt="Iced Latte" class="popup-image">
+            <h3 class="popup-title">Iced Latte</h3>
+            <p class="popup-description">Chilled espresso mixed with creamy milk over ice.</p>
+            <div class="popup-price">₱170</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Latte', 170, 'cold-2', 'images/menu-items/iced-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-3" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-3')">&times;</span>
+            <img src="images/menu-items/iced-mocha.png" alt="Iced Mocha" class="popup-image">
+            <h3 class="popup-title">Iced Mocha</h3>
+            <p class="popup-description">Chocolate-infused espresso with cold milk and ice.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Mocha', 180, 'cold-3', 'images/menu-items/iced-mocha.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-4" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-4')">&times;</span>
+            <img src="images/menu-items/iced-caramel-macchiato.png" alt="Iced Caramel Macchiato" class="popup-image">
+            <h3 class="popup-title">Iced Caramel Macchiato</h3>
+            <p class="popup-description">Sweet caramel espresso layered with milk and ice.</p>
+            <div class="popup-price">₱190</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Caramel Macchiato', 190, 'cold-4', 'images/menu-items/iced-caramel-macchiato.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-5" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-5')">&times;</span>
+            <img src="images/menu-items/cold-brew.png" alt="Cold Brew Coffee" class="popup-image">
+            <h3 class="popup-title">Cold Brew Coffee</h3>
+            <p class="popup-description">Slow-steeped coffee for a smooth, bold flavor.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Cold Brew Coffee', 180, 'cold-5', 'images/menu-items/cold-brew.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-6" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-6')">&times;</span>
+            <img src="images/menu-items/iced-matcha-latte.png" alt="Iced Matcha Latte" class="popup-image">
+            <h3 class="popup-title">Iced Matcha Latte</h3>
+            <p class="popup-description">Chilled matcha green tea with milk and ice.</p>
+            <div class="popup-price">₱190</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Matcha Latte', 190, 'cold-6', 'images/menu-items/iced-matcha-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-7" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-7')">&times;</span>
+            <img src="images/menu-items/iced-chai-latte.png" alt="Iced Chai Latte" class="popup-image">
+            <h3 class="popup-title">Iced Chai Latte</h3>
+            <p class="popup-description">Spiced chai tea with cold milk and ice.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Chai Latte', 180, 'cold-7', 'images/menu-items/iced-chai-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-8" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-8')">&times;</span>
+            <img src="images/menu-items/iced-hojicha-latte.png" alt="Iced Hojicha Latte" class="popup-image">
+            <h3 class="popup-title">Iced Hojicha Latte</h3>
+            <p class="popup-description">Toasted green tea blended with milk and served over ice.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Iced Hojicha Latte', 180, 'cold-8', 'images/menu-items/iced-hojicha-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-9" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-9')">&times;</span>
+            <img src="images/menu-items/fruit-iced-tea.png" alt="Fruit Iced Tea" class="popup-image">
+            <h3 class="popup-title">Fruit Iced Tea</h3>
+            <p class="popup-description">Refreshing black tea infused with fresh fruit flavors.</p>
+            <div class="popup-price">₱160</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Fruit Iced Tea', 160, 'cold-9', 'images/menu-items/fruit-iced-tea.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="cold-10" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('cold-10')">&times;</span>
+            <img src="images/menu-items/strawberry-lemonade.png" alt="Strawberry Lemonade" class="popup-image">
+            <h3 class="popup-title">Strawberry Lemonade</h3>
+            <p class="popup-description">Sweet strawberries and zesty lemonade over ice.</p>
+            <div class="popup-price">₱170</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Strawberry Lemonade', 170, 'cold-10', 'images/menu-items/strawberry-lemonade.png')">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Popups for menu items - Warm Drinks -->
+    <div id="warm-1" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-1')">&times;</span>
+            <img src="images/menu-items/espresso.png" alt="Espresso" class="popup-image">
+            <h3 class="popup-title">Espresso</h3>
+            <p class="popup-description">Rich, bold, and aromatic single shot of espresso.</p>
+            <div class="popup-price">₱120</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Espresso', 120, 'warm-1', 'images/menu-items/espresso.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-2" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-2')">&times;</span>
+            <img src="images/menu-items/cappuccino.png" alt="Cappuccino" class="popup-image">
+            <h3 class="popup-title">Cappuccino</h3>
+            <p class="popup-description">Classic Italian coffee with equal parts espresso, steamed milk, and milk foam.</p>
+            <div class="popup-price">₱160</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Cappuccino', 160, 'warm-2', 'images/menu-items/cappuccino.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-3" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-3')">&times;</span>
+            <img src="images/menu-items/latte.png" alt="Latte" class="popup-image">
+            <h3 class="popup-title">Latte</h3>
+            <p class="popup-description">Smooth espresso with creamy steamed milk and a light layer of foam.</p>
+            <div class="popup-price">₱170</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Latte', 170, 'warm-3', 'images/menu-items/latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-4" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-4')">&times;</span>
+            <img src="images/menu-items/mocha.png" alt="Mocha" class="popup-image">
+            <h3 class="popup-title">Mocha</h3>
+            <p class="popup-description">Espresso blended with chocolate and steamed milk, topped with whipped cream.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Mocha', 180, 'warm-4', 'images/menu-items/mocha.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-5" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-5')">&times;</span>
+            <img src="images/menu-items/caramel-macchiato.png" alt="Caramel Macchiato" class="popup-image">
+            <h3 class="popup-title">Caramel Macchiato</h3>
+            <p class="popup-description">Espresso layered with steamed milk and caramel drizzle.</p>
+            <div class="popup-price">₱190</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Caramel Macchiato', 190, 'warm-5', 'images/menu-items/caramel-macchiato.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-6" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-6')">&times;</span>
+            <img src="images/menu-items/chai-latte.png" alt="Chai Latte" class="popup-image">
+            <h3 class="popup-title">Chai Latte</h3>
+            <p class="popup-description">Spiced black tea mixed with steamed milk and honey.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Chai Latte', 180, 'warm-6', 'images/menu-items/chai-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-7" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-7')">&times;</span>
+            <img src="images/menu-items/matcha-latte.png" alt="Matcha Latte" class="popup-image">
+            <h3 class="popup-title">Matcha Latte</h3>
+            <p class="popup-description">Japanese matcha green tea whisked with milk for a creamy, earthy drink.</p>
+            <div class="popup-price">₱190</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Matcha Latte', 190, 'warm-7', 'images/menu-items/matcha-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-8" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-8')">&times;</span>
+            <img src="images/menu-items/hot-chocolate.png" alt="Hot Chocolate" class="popup-image">
+            <h3 class="popup-title">Hot Chocolate</h3>
+            <p class="popup-description">Rich, velvety cocoa topped with whipped cream.</p>
+            <div class="popup-price">₱170</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Hot Chocolate', 170, 'warm-8', 'images/menu-items/hot-chocolate.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-9" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-9')">&times;</span>
+            <img src="images/menu-items/hojicha-latte.png" alt="Hojicha Latte" class="popup-image">
+            <h3 class="popup-title">Hojicha Latte</h3>
+            <p class="popup-description">Toasted Japanese green tea with a nutty, smoky flavor, blended with milk.</p>
+            <div class="popup-price">₱180</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Hojicha Latte', 180, 'warm-9', 'images/menu-items/hojicha-latte.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="warm-10" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('warm-10')">&times;</span>
+            <img src="images/menu-items/flat-white.png" alt="Flat White" class="popup-image">
+            <h3 class="popup-title">Flat White</h3>
+            <p class="popup-description">Smooth espresso with velvety microfoam milk.</p>
+            <div class="popup-price">₱170</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Flat White', 170, 'warm-10', 'images/menu-items/flat-white.png')">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Popups for menu items - Sandwiches -->
+    <div id="sandwich-1" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-1')">&times;</span>
+            <img src="images/menu-items/classic-club-sandwich.png" alt="Classic Club Sandwich" class="popup-image">
+            <h3 class="popup-title">Classic Club Sandwich</h3>
+            <p class="popup-description">Triple-layered sandwich with roasted chicken, crispy bacon, fresh lettuce, tomato, and mayo on toasted bread.</p>
+            <div class="popup-price">₱250</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Classic Club Sandwich', 250, 'sandwich-1', 'images/menu-items/classic-club-sandwich.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-2" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-2')">&times;</span>
+            <img src="images/menu-items/chicken-pesto-panini.png" alt="Chicken Pesto Panini" class="popup-image">
+            <h3 class="popup-title">Chicken Pesto Panini</h3>
+            <p class="popup-description">Grilled panini stuffed with grilled chicken, basil pesto, melted mozzarella, and sun-dried tomatoes.</p>
+            <div class="popup-price">₱280</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Chicken Pesto Panini', 280, 'sandwich-2', 'images/menu-items/chicken-pesto-panini.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-3" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-3')">&times;</span>
+            <img src="images/menu-items/tuna-melt.png" alt="Tuna Melt" class="popup-image">
+            <h3 class="popup-title">Tuna Melt</h3>
+            <p class="popup-description">Crispy toasted bread with creamy tuna salad and melted cheddar cheese.</p>
+            <div class="popup-price">₱240</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Tuna Melt', 240, 'sandwich-3', 'images/menu-items/tuna-melt.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-4" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-4')">&times;</span>
+            <img src="images/menu-items/ham-cheese-croissant.png" alt="Ham & Cheese Croissant" class="popup-image">
+            <h3 class="popup-title">Ham & Cheese Croissant</h3>
+            <p class="popup-description">Flaky butter croissant filled with smoked ham and gooey Swiss cheese.</p>
+            <div class="popup-price">₱260</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Ham & Cheese Croissant', 260, 'sandwich-4', 'images/menu-items/ham-cheese-croissant.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-5" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-5')">&times;</span>
+            <img src="images/menu-items/caprese-sandwich.png" alt="Caprese Sandwich" class="popup-image">
+            <h3 class="popup-title">Caprese Sandwich</h3>
+            <p class="popup-description">Fresh mozzarella, ripe tomatoes, and basil drizzled with balsamic glaze on ciabatta bread.</p>
+            <div class="popup-price">₱270</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Caprese Sandwich', 270, 'sandwich-5', 'images/menu-items/caprese-sandwich.png')">Add to Cart</button>
+        </div>
+    </div>
+    <div id="sandwich-6" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-6')">&times;</span>
+            <img src="images/menu-items/BBQ-pulled-pork-sandwich.png" alt="BBQ Pulled Pork Sandwich" class="popup-image">
+            <h3 class="popup-title">BBQ Pulled Pork Sandwich</h3>
+            <p class="popup-description">Slow-cooked BBQ pulled pork topped with coleslaw in a soft brioche bun.</p>
+            <div class="popup-price">₱290</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'BBQ Pulled Pork Sandwich', 290, 'sandwich-6', 'images/menu-items/BBQ-pulled-pork-sandwich.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-7" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-7')">&times;</span>
+            <img src="images/menu-items/avocado-egg-toast.png" alt="Avocado & Egg Toast" class="popup-image">
+            <h3 class="popup-title">Avocado & Egg Toast</h3>
+            <p class="popup-description">Smashed avocado, poached egg, and cherry tomatoes on sourdough toast.</p>
+            <div class="popup-price">₱260</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Avocado & Egg Toast', 260, 'sandwich-7', 'images/menu-items/avocado-egg-toast.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-8" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-8')">&times;</span>
+            <img src="images/menu-items/BLT-sandwich.png" alt="BLT Sandwich" class="popup-image">
+            <h3 class="popup-title">BLT Sandwich</h3>
+            <p class="popup-description">Crispy bacon, lettuce, and tomato with mayo on toasted bread.</p>
+            <div class="popup-price">₱250</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'BLT Sandwich', 250, 'sandwich-8', 'images/menu-items/BLT-sandwich.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-9" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-9')">&times;</span>
+            <img src="images/menu-items/salmon-cream-cheese-bagel.png" alt="Salmon & Cream Cheese Bagel" class="popup-image">
+            <h3 class="popup-title">Salmon & Cream Cheese Bagel</h3>
+            <p class="popup-description">Smoked salmon, cream cheese, red onions, and capers on a toasted bagel.</p>
+            <div class="popup-price">₱320</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Salmon & Cream Cheese Bagel', 320, 'sandwich-9', 'images/menu-items/salmon-cream-cheese-bagel.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div id="sandwich-10" class="menu-popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('sandwich-10')">&times;</span>
+            <img src="images/menu-items/mushroom-swiss-melt.png" alt="Mushroom & Swiss Melt" class="popup-image">
+            <h3 class="popup-title">Mushroom & Swiss Melt</h3>
+            <p class="popup-description">Sautéed mushrooms and melted Swiss cheese on toasted sourdough bread.</p>
+            <div class="popup-price">₱270</div>
+            
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" onclick="addToCart(this, 'Mushroom & Swiss Melt', 270, 'sandwich-10', 'images/menu-items/mushroom-swiss-melt.png')">Add to Cart</button>
+        </div>
+    </div>
+    
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="services/index.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+        
+        <div class="footer-underline"></div>
+        
+        <div class="footer-bottom">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <div class="social-icons">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        </div>
+    
+    <script>
+
+// Page navigation active link
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll("#navbar a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage || (currentPage === "" && link.getAttribute("href") === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+});
+
+        // Carousel functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the carousel data
+    const carousels = {
+        'cold-drinks-carousel': { currentIndex: 0, totalItems: 4 },
+        'warm-drinks-carousel': { currentIndex: 0, totalItems: 4 },
+        'sandwiches-carousel': { currentIndex: 0, totalItems: 4 }
+    };
+    
+    // Function to move carousel
+    window.moveCarousel = function(direction, carouselId) {
+        const carousel = document.getElementById(carouselId);
+        const carouselState = carousels[carouselId];
+        const indicators = document.querySelectorAll(`#${carouselId.replace('carousel', 'indicators')} .indicator`);
+        
+        carouselState.currentIndex += direction;
+        
+        if (carouselState.currentIndex < 0) {
+            carouselState.currentIndex = carouselState.totalItems - 1;
+        } else if (carouselState.currentIndex >= carouselState.totalItems) {
+            carouselState.currentIndex = 0;
+        }
+        
+        carousel.style.transform = `translateX(-${carouselState.currentIndex * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            if (index === carouselState.currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    };
+    
+    // Function to jump to a specific slide
+    window.jumpToSlide = function(slideIndex, carouselId) {
+        const carousel = document.getElementById(carouselId);
+        const carouselState = carousels[carouselId];
+        const indicators = document.querySelectorAll(`#${carouselId.replace('carousel', 'indicators')} .indicator`);
+        
+        carouselState.currentIndex = slideIndex;
+        carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            if (index === slideIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    };
+    
+    // Popup functionality
+    window.openPopup = function(popupId) {
+        document.getElementById(popupId).style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+    };
+    
+    window.closePopup = function(popupId) {
+        document.getElementById(popupId).style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    };
+    
+    // Close popup when clicking outside the content
+    document.addEventListener('click', function(event) {
+        const popups = document.querySelectorAll('.menu-popup');
+        popups.forEach(popup => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const openPopup = document.querySelector('.menu-popup[style*="display: flex"]');
+            if (openPopup) {
+                openPopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#home' || targetId === '#services' || targetId === '#order' || 
+                targetId === '#about' || targetId === '#contact' || targetId === '#blog' || 
+                targetId === '#menu') {
+                return; // These would navigate to different pages
+            }
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
+// Function to add item to cart and save in localStorage
+function addToCart(button, itemName, price, popupId, imageSrc) {
+    let quantityElement = button.previousElementSibling.querySelector(".quantity-value");
+    let quantity = parseInt(quantityElement.innerText);
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if item already exists in the cart
+    let existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cart.push({ name: itemName, price: price, quantity: quantity, image: imageSrc });
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Update cart count
+    updateCartCount();
+
+    // Close popup and reset quantity
+    closePopup(popupId);
+    quantityElement.innerText = 1;
+
+    // Show notification
+    showAddedMessage(quantity, itemName);
+}
+
+// Update cart count in navbar
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").innerText = totalItems;
+}
+
+// Show notification when an item is added
+function showAddedMessage(quantity, itemName) {
+    const message = document.createElement('div');
+    message.className = 'added-message';
+    message.textContent = `${quantity} × ${itemName} added to cart`;
+    document.body.appendChild(message);
+
+    setTimeout(() => {
+        message.remove();
+    }, 3000);
+}
+
+// Close popup
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Increase quantity in popup
+function increaseQuantity(button) {
+    let quantityElement = button.previousElementSibling;
+    let quantity = parseInt(quantityElement.innerText);
+    quantityElement.innerText = quantity + 1;
+}
+
+// Decrease quantity in popup
+function decreaseQuantity(button) {
+    let quantityElement = button.nextElementSibling;
+    let quantity = parseInt(quantityElement.innerText);
+    if (quantity > 1) {
+        quantityElement.innerText = quantity - 1;
+    }
+}
+</script>
+
+</body>
+</html>

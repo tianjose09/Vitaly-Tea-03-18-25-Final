@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+    <title>Cutting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Cutting/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Preferred favicon format -->
+<link rel="icon" type="image/x-icon" href="../../../images/icons/favicon.ico">
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" href="../../../images/icons/favicon.png">
+
+<!-- Windows Tiles -->
+<meta name="msapplication-TileImage" content="../../../images/icons/favicon.png">
+
+</head>
+<body>
+
+    <div id="header">
+        <h1>
+        <img src="../Binding/assets/img/logo.png" alt="Vitaly Tea Logo" style="vertical-align: middle; width: auto; height: 1.5em;" />
+        Vitaly Tea
+        </h1>
+    </div>
+        
+    <div id="navbar">
+        <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../index.html">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="../../../menu.html">Menu</a> 
+                <div class="dropdown-content">
+                    <a href="../../../menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="../../../menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="../../../menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="../../../cart.html">Order</a></li>
+            <li><a href="../../../aboutus.html">About Us</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <header class="banner">
+        <h1 style="text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);">Cutting</h1>
+    </header>
+
+  
+
+    <section class="about-section">
+    
+        <p>
+            <span class="highlight">C</span> 
+            utting in printing refers to the process of trimming printed materials to their final size or shape, ensuring a clean and professional appearance. It is a crucial step in print production, as it removes excess paper, aligns edges, and enhances the overall presentation of the finished product. Various cutting methods are used depending on the type of project and precision required. Guillotine cutting is a common technique that uses a sharp blade to cut through multiple sheets at once, making it ideal for bulk printing. Die cutting, on the other hand, allows for custom shapes and designs, such as rounded corners or intricate patterns, which are often used for packaging, labels, and promotional materials. Laser cutting provides high precision for detailed designs, often used in specialty prints and artistic projects. Proper cutting ensures that all printed pieces are uniform and meet exact specifications, preventing misalignment and uneven edges. This step is essential for achieving a polished and professional look, especially in business cards, brochures, booklets, and invitations.
+        </p>
+    </section>
+
+    <section class="services-section">
+        <h3>Services Include</h3>
+        <div class="services-list">
+            <div class="service-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Ensure precision and clean edges with professional cutting services.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Perfect for achieving a polished finish for various materials.</p>
+            </div>
+        </div>
+
+        <div class="image-gallery">
+            <img src="../Cutting/assets/img/cut1.jpg" alt="">
+            <img src="../Cutting/assets/img/cut.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="solution-section">
+        <div class="goback">
+            <div class="back">
+                <a href="../../index.html">Go Back</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="../../index.html">Services</a>
+        <a href="../../../contact.html">Contact Us</a>
+        <a href="../../../aboutus.html">About Us</a>
+        <a href="../../../credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+        <div class="footer-underline"></div>
+        <div class="footer-bottom">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <div class="social-icons">
+        <p>Follow us</p>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        </div>
+        </footer>
+        
+    <script>
+        function setActiveLink() {
+    const links = document.querySelectorAll("#navbar a");
+    
+    links.forEach(link => {
+    link.addEventListener("click", function() {
+    links.forEach(link => link.classList.remove("active"));
+    this.classList.add("active");
+    });
+    });
+    }
+    
+    document.addEventListener("DOMContentLoaded", setActiveLink);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>Services</title>
+
+    <!-- Preferred favicon format -->
+<link rel="icon" type="image/x-icon" href="../images/icons/favicon.ico">
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" href="../images/icons/favicon.png">
+
+<!-- Windows Tiles -->
+<meta name="msapplication-TileImage" content="../images/icons/favicon.png">
+
+
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <img src="./assets/img/logo.png" alt="Vitaly Tea" style="vertical-align: middle; width: auto; height: 1.5em;" />Vitaly Tea</h1>
+    </header>
+
+    <div id="navbar">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html" class="active">Services</a></li>
+            <li class="menu-dropdown">
+                <a href="../menu.html">Menu</a>
+                <div class="dropdown-content">
+                    <a href="../menu.html#cold-drinks">Cold Drinks</a>
+                    <a href="../menu.html#warm-drinks">Warm Drinks</a>
+                    <a href="../menu.html#sandwiches">Sandwiches</a>
+                </div>
+            </li>
+            <li><a href="../cart.html">Order</a></li>
+            <li><a href="../aboutus.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero-image">
+        <img src="./assets/img/meet.jpg" alt="Hero Image">
+    </section>
+
+    <nav class="services-info">
+        <h2>DIGITAL PRINTING</h2>
+        <h2>✽</h2>
+        <h2>LAMINATING</h2>
+        <h2>✽</h2>
+        <h2>BINDING</h2>
+        <h2>✽</h2>
+        <h2>CUTTING</h2>
+    </nav>
+
+    <section class="services-section">
+        <div class="section-title">
+            <h3>OUR SERVICES</h3>
+            <p>Printing services offer a wide range of solutions for both personal and business needs, including digital printing, offset printing, and large-format printing.</p>
+        </div>
+        <div class="services-container">
+            <div class="service-column">
+                <div class="service-card">
+                    <img src="./assets/img/69caf2959874f4f953dcefa7a082822b.jpg" alt="Digital Printing">
+                    <div class="icon-circle">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h2>Digital Printing</h2>
+                    <p>Digital printing is a modern method that delivers sharp, vibrant, high-quality prints.                    </p>
+                    <a href="./pages/Digital Printing/index.html" class="learn-more">View Service</a>
+                </div>
+                <div class="service-card">
+                    <img src="./assets/img/bind.jpg" alt="Binding">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h2>Binding</h2>
+                    <p>Binding secures pages together for a polished, professional look. It enhances durability and presentation.                    </p>
+                    <a href="./pages/Binding/index.html" class="learn-more">View Service</a>
+                </div>
+            </div>
+            <div class="service-column">
+                <div class="service-card">
+                    <img src="./assets/img/lami.jpg" alt="Laminating">
+                    <div class="icon-circle">
+                        <i class="fa-regular fa-newspaper"></i>
+                    </div>
+                    <h2>Laminating</h2>
+                    <p>Laminating adds a protective layer to documents, making them resistant to water, stains, and tearing.</p>
+                    <a href="./pages/Laminating/index.html" class="learn-more">View Service</a>
+                </div>
+                <div class="service-card">
+                    <img src="./assets/img/cut.jpg" alt="Cutting">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h2>Cutting</h2>
+                    <p>With various cutting techniques like straight and laser cutting, materials can be shaped based on a specific design.</p>
+                    <a href="./pages/Cutting/index.html" class="learn-more">View Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <div class="footer-content">
+        <div class="footer-logo">Vitaly Tea</div>
+        <div class="footer-links">
+        <div class="footer-nav">
+        <a href="../../index.html">Services</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../aboutus.html">About Us</a>
+        <a href="../credits.html">Credits</a>
+        </div>
+        </div>
+        </div>
+        <div class="footer-underline"></div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 All Rights Reserved</p>
+            <div class="social-icons">
+                <p>Follow us</p>
+                <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script>
+        function setActiveLink() {
+            const links = document.querySelectorAll("#navbar a");
+            links.forEach(link => {
+                link.addEventListener("click", function() {
+                    links.forEach(link => link.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+        }
+        document.addEventListener("DOMContentLoaded", setActiveLink);
+
+    </script>
+</body>
+</html>
